@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>侧边菜单划出</title>
+	  <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- 可选的Bootstrap主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/basic.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="carouselComponent">
+		<div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="5000" data-pause="hover" data-wrap="true">
+		    <!-- 轮播（Carousel）指标 -->
+		    <ol class="carousel-indicators">
+		        <li data-target="#myCarousel" data-slide-to="0" 
+		            class="active"></li>
+		        <li data-target="#myCarousel" data-slide-to="1"></li>
+		        <li data-target="#myCarousel" data-slide-to="2"></li>
+		    </ol>   
+		    <!-- 轮播（Carousel）项目 -->
+		    <div class="carousel-inner">
+		        <div class="item active">
+		            <img class="carouselImgEvent" src="./images/1.jpg" alt="First slide">
+		        </div>
+		        <div class="item">
+		            <img class="carouselImgEvent" src="./images/2.jpg" alt="Second slide">
+		        </div>
+		        <div class="item">
+		            <img class="carouselImgEvent" src="./images/3.jpg" alt="Third slide">
+		        </div>
+		    </div>
+		    <!-- 轮播（Carousel）导航 -->
+		   <!--  <a class="carousel-control left" href="#myCarousel" 
+		        data-slide="prev">&lsaquo;</a>
+		    <a class="carousel-control right" href="#myCarousel" 
+		        data-slide="next">&rsaquo;</a> -->
+		</div>
+	</div>
+	<div class="container">
+		<h3 class="title">对于bootstrap轮播组件的滑动播放支持</h3>
+		<hr class="line">
+		<p class="info">bootstra的轮播组件是经常用于展示banner内容常用的方法之一，一般用于多个图片轮播；但是bootstrap的组件不支持移动设备，无法使用滑动来切换播放内容。对于触屏设备不友好</p>
+		<p class="info">为此我查找许多的组件，觉得hammer.js的手势用起来不错；支持多个手势，因此写了这个支持触屏手势的组件。这个页面只写了滑动，准备测试其他常用的手势，比如长按、拖动、轻点、缩放等等。</p>
+	</div>
+
+<script src="./js/hammer.js"></script>
+<script src="./js/gesture.js"></script>
+<script type="text/javascript">
+	$().ready(function(){
+		initCarouselSwipeGesture();
+	});
+</script>
+</body>
+</html>
