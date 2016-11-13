@@ -124,3 +124,25 @@ function initSwipeGesture(){
 		$('#swipe').text(ev);
 	});
 }
+
+function sideBarSwitch(){
+
+	sideBarOff();
+	//侧边栏划入划出动作
+	var swipeEvent = document.getElementById('main');
+	var swipeMobileEvent = new Hammer(swipeEvent);
+
+	swipeMobileEvent.on('swipeleft',function(ev){
+		$('.sideBar').removeClass('disappear');
+	});
+
+	swipeMobileEvent.on('swiperight',function(ev){
+		$('.sideBar').addClass('disappear');
+	});
+}
+	var flag;
+function sideBarOff(){
+	//我想要在侧栏边其余部分点击就可以关闭侧边栏，判断起来很麻烦，搞了半天；最后使用传入变量的方式来判断点击
+	//是不是在侧边栏，做个判断；星期六好无聊 -。-
+	
+}

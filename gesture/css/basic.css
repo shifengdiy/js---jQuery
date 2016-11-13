@@ -156,3 +156,8 @@ body {background-color: #f3f3f3;}
 ul {padding: 8px}
 li {list-style: none;}
 .info {text-indent: 2em;}
+
+.sideBar {height: 100%;width: 38%;position: fixed;top: 3px;left: -38%;transition: all 318ms ease-in-out;background-color: rgba(113,113,113,0.9);z-index: 100;}
+.disappear {left: 0;position: fixed;}
+
+.btn1,.btn2 {padding: 8px 15px;outline: none;border: 1px solid #000;font-size: 16px;background-color: transparent;border-radius: 3px;margin: 8px;float: right;}
