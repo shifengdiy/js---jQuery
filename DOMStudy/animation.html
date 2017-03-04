@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+		.d_1 {margin: 20px 30px;border: 1px solid #333;height: 40px;}
+	</style>
+</head>
+<body>
+	<div class="d_1">Hello World</div>
+	<button type="button" class="show">弹出</button>
+	<button type="button" class="hide">消失</button>
+	<button type="button" class="in">弹出</button>
+	<button type="button" class="out">消失</button>
+<script type="text/javascript" src="../jquery.js"></script>
+<script type="text/javascript">
+	$().ready(function(){
+		console.log('123');
+		initDisplay();
+	});
+	function initDisplay(){
+		$('.show').on('click',function(){
+			$('.d_1').fadeIn('400','swing');
+		});
+		$('.hide').on('click',function(){
+			$('.d_1').fadeOut('slow');
+		});
+		$('.in').on('click',function(){
+			$('.d_1').show('slow');
+		});
+		$('.out').on('click',function(){
+			$('.d_1').hide('slow');
+		});
+	}
+</script>
+</body>
+</html>

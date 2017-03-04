@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>spinner demo</title>
+  <style type="text/css" media="screen">
+      .d_2 {margin: 30px 50px;padding: 20px;border: 1px solid #333;border-radius: 3PX;margin: 20px 10px;}
+      .ul_1 {margin: 20px 10px;}
+      h4,ul {margin: 0;}
+      h4 {width: 100px;border: 1px solid #333;}
+      ul {display: inline-block;padding: 10px;border: 1px solid #666666;border-radius: 3px;list-style: none;}
+      .d_3 {margin: 20px 30px;width: 80%;border: 1px solid #333;border-radius: 3px;max-height: 200px;overflow: scroll;}
+      .d_3 ul {display: block;}
+  </style>
+  <script src="./js/jquery.js"></script>
+   
+</head>
+<body>
+	<div>
+		<input type="text" id="spinner">
+	</div> 
+	<div class="d_2">
+		<div class="ul_1">
+			<h4>开始下拉菜单</h4>
+			<ul>
+				<li>这是列表</li>
+				<li>这是列表</li>
+				<li>这是列表</li>
+			</ul>
+		</div>
+		<div class="ul_1">
+			<h4>开始下拉菜单</h4>
+			<ul>
+				<li>这是列表</li>
+				<li>这是列表</li>
+				<li>这是列表</li>
+			</ul>
+		</div>
+		<div class="ul_1">
+			<h4>开始下拉菜单</h4>
+			<ul>
+				<li>这是列表</li>
+				<li>这是列表</li>
+				<li>这是列表</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="d_3" id="chos">
+		<ul>
+			<li>这是列表</li>
+			<li>这是列表</li>
+			<li>这是列表</li>
+		</ul>
+		<ul>
+			<li>这是列表</li>
+			<li>这是列表</li>
+			<li>这是列表</li>
+		</ul>
+		<ul>
+			<li>这是列表</li>
+			<li>这是列表</li>
+			<li>这是列表</li>
+		</ul>
+		<ul>
+			<li>这是列表</li>
+			<li>这是列表</li>
+			<li>这是列表</li>
+		</ul>
+	</div>
+<script>
+	$('.ul_1').mouseover(function(e){
+		var position = $(this).find('h4').is(':hover') || $(this).find('ul').is(':hover');
+		console.log(position);
+		if(position){
+			$(this).find('ul').show('fast');
+		} else {
+			$(this).find('ul').hide('fast');
+		}
+		e.stopPropagation();
+	});
+
+	$('.ul_1').mouseleave(function(e){
+ 		$(this).find('ul').hide();
+ 		e.stopPropagation();
+	});
+
+	$('#spinner').scroll(function(){
+		alert('滚动发生了');
+	});
+	var ipt = document.getElementById('spinner');
+	ipt.addEventListener('mousewheel',function(e){
+		console.log(e);
+		e.stopPropagation();
+		e.preventDefault();
+		console.log('++-------');
+	});
+	var box = document.getElementById('chos');
+
+	box.addEventListener('mousewheel',function(e){
+		console.log(e);
+		e.preventDefault();
+		e.stopPropagation();
+		e.stopImmediatePropagation(); 
+	});
+	
+	box.addEventListener('mousewheel',function(e){
+		alert('123');
+	})
+
+	$('#spinner').unbind('scroll mousewheel');
+
+	$().ready(function(){
+		$('.d_2 ul').hide('fast');
+	}); 
+</script>
+ 
+</body>
+</html>
