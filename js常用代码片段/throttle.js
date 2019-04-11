@@ -13,7 +13,7 @@ window.addEventListener('load', function(){
     this.innerHTML = count;
   }, 1650))
 })
-  3
+  
 //使用时间戳的节流方式，最常见方法，首个动作会被立刻执行，但是最后一个动作可能不执行
 const throttle_1 = function(action, wait = 100){
   var previous = 0;
